@@ -38,6 +38,8 @@ NODE_OPTIONS='--dns-result-order=ipv4first'  npm start
 
 Realms are the unit of administration in keycloak, users and clients are configured inside a realm. Our docker compose will initialize a realm in keycloak called _qickstart_.
 
+Login to keycloak with user alice and password alice.
+
 ### Prepare Environment
 
 Rename .env.example file to .env.local
