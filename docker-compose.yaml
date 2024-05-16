@@ -10,7 +10,7 @@ services:
     ports:
       - 5432:5432
   keycloak:
-    depends_on: 
+    depends_on:
       - postgres
     image: quay.io/keycloak/keycloak:22.0.4
     environment:
@@ -21,6 +21,8 @@ services:
       KC_DB_URL_PORT: 5432
       KC_DB_USERNAME: postgres
       KC_DB_PASSWORD: postgres
-    command: start-dev
+    command: ["start-dev", "--import-realm"]
     ports:
       - 8080:8080
+    volumes:
+      - ./realms/realm-import.json:/opt/keycloak/data/import/realm.json:ro
